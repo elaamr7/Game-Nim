@@ -38,7 +38,7 @@ public class GameNimLearning {
     }
     public void getExperimentResult(){
         players.reset();
-        for(int i=0; i<2; i++){
+        for(int i=0; i<400; i++){
             doExperiment(root);
         }
         System.out.println("Hasil eksperimen : ");
@@ -60,6 +60,7 @@ public class GameNimLearning {
     }
     public void doExperiment(Tree.Node root){
         Tree.LevelOrderTraversal(root, new TraversalMetodeListener() {
+            Random rand = new Random();
             @Override
             public void onTraversal(int levelSize, Queue<Tree.Node> level) {
                 while (levelSize > 0) {
@@ -67,8 +68,18 @@ public class GameNimLearning {
                     level.remove();
                     Tree.Node child = null;
                     if (parent.child.size() != 0) {
-                        Random rand = new Random();
-                        child = parent.child.get(rand.nextInt(parent.child.size()));
+                        double exploreRate = rand.nextDouble();
+                        if(exploreRate<0.1){
+                            child = parent.child.get(rand.nextInt(parent.child.size()));
+                        }
+                        else{
+                            child = parent.child.get(0);
+                            for(int i=0; i<parent.child.size(); i++){
+                                if(parent.child.get(i).weight>= child.weight){
+                                    child = parent.child.get(i);
+                                }
+                            }
+                        }
                         parent.weight = parent.weight + (0.1*(child.weight-parent.weight));
                     }
                     Tree.printNode(parent);

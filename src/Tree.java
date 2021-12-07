@@ -32,7 +32,7 @@ public class Tree {
             root.child.get(0).child.get(0).child.add(newNode(3211,0.0));
             root.child.get(0).child.get(1).child.add(newNode(3211,0.0));
             root.child.get(1).child.get(0).child.add(newNode(3211,0.0));
-            root.child.get(1).child.get(1).child.add(newNode(2211,0.0));
+            root.child.get(1).child.get(1).child.add(newNode(2221,0.0));
             root.child.get(2).child.get(0).child.add(newNode(3211,0.0));
             root.child.get(2).child.get(1).child.add(newNode(3211,0.0));
             root.child.get(0).child.get(0).child.get(0).child.add(newNode(31111,0.0));
@@ -40,7 +40,7 @@ public class Tree {
             root.child.get(0).child.get(1).child.get(0).child.add(newNode(22111,0.0));
             root.child.get(1).child.get(0).child.get(0).child.add(newNode(22111,0.0));
             root.child.get(2).child.get(0).child.get(0).child.add(newNode(22111,0.0));
-            root.child.get(2).child.get(1).child.get(0).child.add(newNode(31111,0.0));
+            root.child.get(2).child.get(1).child.get(0).child.add(newNode(22111,0.0));
             root.child.get(0).child.get(0).child.get(0).child.get(0).child.add(newNode(211111,0.0));
 
             return root;
